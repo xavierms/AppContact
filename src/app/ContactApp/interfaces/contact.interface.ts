@@ -2,7 +2,7 @@ export interface Contact{
     id: number;
     name: string;
     lastName: string;
-    phoneNumber: number;
+    phoneNumber: number[];
 }
 
 // export interface PhoneNumber{

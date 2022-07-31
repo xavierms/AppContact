@@ -31,24 +31,20 @@
                             <th scope="row">{{contact.id }})-</th>
                             <td>{{contact.name }}  </td> 
                             <td>{{contact.lastName}}</td> 
-                            <td >{{contact.phoneNumber | mask:"000-000-0000"}}</td> 
-                            <!-- <td  *ngIf="contact.phoneNumber.length > 1">
-                                <i class="fa fa-eye fa-2x iconoPlus" (click)="clicking($event)"></i>
-                            </td> -->
-                              <!-- <span *ngIf="contact.phoneNumber.length < 2">
-
-                                  <td *ngFor="let number of contact.phoneNumber">{{number.phoneNumber}}</td>
-                              </span> -->
-                              <!-- <td> -->
-
-                                  <!-- <div class="dropdownlist" *ngIf="contact.phoneNumber.length > 1">
-                                      <div  *ngFor="let number of contact.phoneNumber; let i = index">
-                                        <div>
-                                          {{ i + 1 }}. {{number.phoneNumber  }}
-                                        </div>
+                            <td  *ngIf="contact.phoneNumber.length > 1">
+                                <a class="link btn-pointer" (click)="clicking($event)">See more</a>
+                                <div class="dropdownlist" *ngIf="contact.phoneNumber.length > 1">
+                                    <div  *ngFor="let number of contact.phoneNumber; let i = index">
+                                      <div>
+                                        {{ i + 1 }}. {{number  }}
                                       </div>
-                                    </div> -->
-                              <!-- </td> -->
+                                    </div>
+                                  </div>
+                            </td>
+                            <td *ngIf="contact.phoneNumber.length < 2">
+                                <p *ngFor="let number of contact.phoneNumber">{{number}}</p>
+                            </td>
+                          
                          
                             <td>
                                 <i  routerLink="contact/edit/{{contact.id}}" 

@@ -60,7 +60,7 @@ export class ContactEditComponent implements OnInit {
             });
   }
   
-  setValuesFormeEdit(name:string, lName:string, phone: number){
+  setValuesFormeEdit(name:string, lName:string, phone: number[]){
     this.formRegister.get('name')?.setValue(name);
     this.formRegister.get('lName')?.setValue(lName);
     this.formRegister.get('phoneNumber')?.setValue(phone);
