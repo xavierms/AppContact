@@ -1,0 +1,76 @@
+<div class="container mt-5 ">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title text-center">CONTACT EDIT</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="section mt-3 mb-4 animate__animated animate__fadeInUp" >
+        <div class="row" >
+            <div class="col-lg-6 offset-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row mb-4">
+                       
+                        <!--  Form -->
+                        <form [formGroup]="formRegister" (ngSubmit)="contactEdit()" class="row g-3 needs-validation">
+                                <!-- --------------- name --------------- -->
+                            <div class="col-md-6">
+                                <label class="form-label">Name<span class="required-field">*</span></label>
+                                <input type="text" 
+                                        class="form-control" 
+                                        formControlName="name" 
+                                        required
+                                        [ngClass]="{'is-invalid':validateField('name')}">
+                                <div class="validatorField"  *ngIf="validateField('name')">
+                                    Este campo es requerido.
+                                </div>
+                            </div>
+                                <!-- --------------- Last name --------------- -->               
+                            <div class="col-md-6 mb-4">  
+                                <label  class="form-label">Last name<span class="required-field">*</span></label>
+                                <input  type="text" 
+                                        class="form-control" 
+                                        formControlName="lName"
+                                        required
+                                        [ngClass]="{'is-invalid':validateField('lName')}">
+                                <div class="validatorField"  *ngIf="validateField('lName')">
+                                    Este campo es requerido.
+                                </div>
+                            </div>
+                            <!-- --------------- Phone Number --------------- -->
+                            <div class="col-md-6">
+                                <label class="form-label">
+                                    Phone Number<span class="required-field">*</span>
+                                </label> 
+                                <input  
+                                class="form-control"
+                                type="text" 
+                                required
+                                mask="000-000-0000"
+                                formControlName="phoneNumber"
+                                [ngClass]="{'is-invalid':validateField('phoneNumber')}" />
+                                <div class="validatorField"  *ngIf="validateField('phoneNumber')">
+                                    Este campo es requerido.
+                                </div>
+                            </div>
+                                <button class="btn btn-warning m-2 " routerLink="/">Regresar</button>
+                                <!-- <button class="btn btn-danger m-2" (click)="clearFormRegister()">Cancelar</button> -->
+                                <button class="btn btn-primary" 
+                                        type="submit" 
+                                        [ngClass]="{'disabled':btnDisable()}">
+                                        Guardar
+                                </button>
+                            </form>
+                        <!-- End  Form -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

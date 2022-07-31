@@ -1,1 +1,77 @@
-/* You can add global styles to this file, and also import other style files */
+
+@import '~ngx-toastr/toastr';
+
+html{
+  min-height: 100%;
+  position: relative;
+}
+body{
+  margin: 0;
+  margin-bottom: 40px;
+  background-color: #307FE1;
+}
+
+footer {
+  padding: 15px 0 5px;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background-color: #0a4275;
+  height: 65px;
+}
+h3 {
+  color: #443963;
+  font-weight: normal;
+  font-size: 30px;
+  font-family: nunito;
+  color: #0a4275;
+}
+.dropdownlist {
+    max-height: 0;
+    transition: max-height 0.3s ease-in-out;
+    overflow: hidden;
+}
+.dropdownlist.open {
+  max-height: 100vh;
+  transition: max-height 0.3s ease-in;
+}
+.iconoPlus {
+  cursor: pointer;
+}
+.background-footer{
+  background-color: #0a4275;
+}
+.card-hover{
+  cursor: pointer;
+  background-color:#2275c7;
+  box-shadow:4px 5px  #2b7dcf57;
+  color: white;
+}
+.card-hover:hover{
+  background-color: #2274c7d2;
+}
+
+.header-contact{
+  background-color: #0a4275;
+
+}
+.validatorField{
+  display: block;
+  font-size: 0.875em;
+  margin-top: 0.25rem;
+  color: red;
+  
+}
+.required-field { 
+  color: red; 
+  font-size: 15px; 
+  display: contents;
+}
+.btn-pointer{
+  cursor: pointer;
+}
+.info-text{
+  color: #0a4275;
+  font-size: medium;
+  font-weight: bold;
+}

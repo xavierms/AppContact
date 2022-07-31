@@ -1,0 +1,67 @@
+<div class="row">
+    <div class="col-lg-8 offset-lg-2 mt-3">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title text-center ">APP CONTACTS</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-10 offset-1 mt-2 mb-2">
+        <div class="card">
+            <div class="card-body">
+                <div class="row mb-4">
+                    <div class="col-md-5 info-text">
+                        <i  routerLink="/contact/add" 
+                            class="fa fa-plus  fa-2x iconoPlus"></i>
+                        Add contact
+                    </div>
+                </div>
+                <table class="table  ">
+                    <thead>
+                        <tr>
+                        <th class="col">#</th>
+                        <th class="col">Name</th>
+                        <th class="col">Last name</th>
+                        <th class="col">Phone number</th>
+                        <th class="col"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let contact of contactList;let i = index">
+                            <th scope="row">{{contact.id }})-</th>
+                            <td>{{contact.name }}  </td> 
+                            <td>{{contact.lastName}}</td> 
+                            <td >{{contact.phoneNumber | mask:"000-000-0000"}}</td> 
+                            <!-- <td  *ngIf="contact.phoneNumber.length > 1">
+                                <i class="fa fa-eye fa-2x iconoPlus" (click)="clicking($event)"></i>
+                            </td> -->
+                              <!-- <span *ngIf="contact.phoneNumber.length < 2">
+
+                                  <td *ngFor="let number of contact.phoneNumber">{{number.phoneNumber}}</td>
+                              </span> -->
+                              <!-- <td> -->
+
+                                  <!-- <div class="dropdownlist" *ngIf="contact.phoneNumber.length > 1">
+                                      <div  *ngFor="let number of contact.phoneNumber; let i = index">
+                                        <div>
+                                          {{ i + 1 }}. {{number.phoneNumber  }}
+                                        </div>
+                                      </div>
+                                    </div> -->
+                              <!-- </td> -->
+                         
+                            <td>
+                                <i  routerLink="contact/edit/{{contact.id}}" 
+                                    class="far fa-edit text-warning btn-pointer mx-3">
+                                </i>
+                                <i  (click)="deleteContact(contact.id)" 
+                                    class="far fa-trash-alt text-danger btn-pointer">
+                                </i>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div> 
+    </div>
+</div>
